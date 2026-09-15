@@ -1,24 +1,27 @@
 /* ═══════════════════════════════════════════════════════════
    bloco-incluir.js — Ecossistema Parceiro
-   1) Consentimento LGPD -> só então liga GA4/GTM
-   2) Proteção anti-cópia (condicional)
-   3) Vídeo do YouTube carregado apenas no clique
+   1) LGPD: só liga GA4/GTM após aceitar
+   2) Reveal por dobra (fallback p/ Safari/Firefox)
+   3) Proteção anti-cópia (condicional)
    ═══════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
-  /* ── Ajuste aqui os dois IDs ── */
   var GTM_ID   = 'SEU_GTM_ID';
   var GA4_ID   = 'SEU_GA4_ID';
   var POLITICA = '/parceiro/politica.html';
   var CHAVE    = 'parceiro_lgpd';
+  var hasJs = false;
+
+  document.documentElement.classList.remove('no-js');
+  document.documentElement.classList.add('js');
+  hasJs = true;
 
   function ler() { try { return localStorage.getItem(CHAVE); } catch (e) { return null; } }
   function gravar(v) { try { localStorage.setItem(CHAVE, v); } catch (e) {} }
 
   function ligarRastreio() {
     if (document.getElementById('gtm-script')) return;
-
     (function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
       var f = d.getElementsByTagName(s)[0], j = d.createElement(s);
@@ -39,6 +42,20 @@
     gtag('config', GA4_ID, { anonymize_ip: true });
   }
 
+  /* ── Reveal por dobra: só roda em navegadores sem scroll-driven ── */
+  window.requestAnimationFrame(function () {
+    var suporta = window.CSS && CSS.supports && CSS.supports('animation-timeline', 'view()');
+    if (suporta || !document.querySelector('.box')) return;
+
+    var alvos = document.querySelectorAll('.box');
+    var obs = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    alvos.forEach(function (el) { obs.observe(el); });
+  });
+
   function banner() {
     var b = document.createElement('div');
     b.id = 'lgpd-banner';
@@ -49,7 +66,7 @@
       '<span>Uso cookies pra entender de onde vem o acesso e melhorar a página. ' +
       'Os detalhes estão na <a href="' + POLITICA + '">Política de Privacidade</a>. ' +
       'Se preferir, pode recusar sem problema.</span>' +
-      '<span style="display:flex;gap:.6rem">' +
+      '<span style="display:flex;gap:.6rem;flex-wrap:wrap">' +
       '<button class="btn-aceitar" type="button" data-acao="aceitar">Aceitar</button>' +
       '<button class="btn-recusar" type="button" data-acao="recusar">Recusar</button>' +
       '</span>';
@@ -76,19 +93,5 @@
     document.body.appendChild(p);
   }
 
-  /* ── Vídeo: nada de request externo até o clique ── */
-  document.querySelectorAll('.video-slot').forEach(function (slot) {
-    var id = slot.getAttribute('data-video-id');
-    var btn = slot.querySelector('.video-play');
-    if (!id || !btn) return;
-    btn.addEventListener('click', function () {
-      var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
-      f.title = slot.getAttribute('data-titulo') || 'Vídeo explicativo';
-      f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-      f.setAttribute('allowfullscreen', '');
-      slot.textContent = '';
-      slot.appendChild(f);
-    });
-  });
+  void hasJs;
 })();
