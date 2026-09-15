@@ -1,228 +1,212 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Espaço Vida Saudável Digital | Eduardo Sidegum — Distribuidor Independente Herbalife</title>
-<meta name="description" content="Um ponto de encontro de bem-estar com shakes, chás e conversa boa. Veja como funciona o Espaço Vida Saudável e como conhecer um.">
-<meta name="author" content="Eduardo Sidegum — Bacharel em Sistemas de Informação">
-<meta name="copyright" content="© 2026 Eduardo Sidegum. Todos os direitos reservados.">
-<meta name="designer" content="Eduardo Sidegum — e-Sid">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Eduardo Sidegum — Distribuidor Independente Herbalife">
-<meta property="og:title" content="Espaço Vida Saudável Digital — um ponto de encontro de bem-estar">
-<meta property="og:description" content="Shakes, chás e conversa boa em formato de rotina diária.">
-<meta property="og:url" content="https://edusidegum.github.io/parceiro/evs-digital/">
-<meta property="og:image" content="https://edusidegum.github.io/parceiro/assets/img/imagem1.webp">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ponto de encontro de bem-estar com shakes e chás">
-<meta property="og:locale" content="pt_BR">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image:alt" content="Espaço Vida Saudável Digital">
-<link rel="canonical" href="https://edusidegum.github.io/parceiro/evs-digital/">
-<link rel="sitemap" type="application/xml" href="https://edusidegum.github.io/parceiro/sitemap.xml">
-<link rel="stylesheet" href="../assets/css/style.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "name": "Eduardo Sidegum — Distribuidor Independente Herbalife",
-      "url": "https://edusidegum.github.io/parceiro/",
-      "telephone": "+55 51 99966-3200",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Novo Hamburgo",
-        "addressRegion": "RS",
-        "postalCode": "93320-070",
-        "addressCountry": "BR"
-      },
-      "geo": { "@type": "GeoCoordinates", "latitude": -29.6896, "longitude": -51.1256 }
-    },
-    {
-      "@type": "WebPage",
-      "url": "https://edusidegum.github.io/parceiro/evs-digital/",
-      "name": "Espaço Vida Saudável Digital",
-      "description": "Ponto de encontro de bem-estar com shakes, chás e convivência diária.",
-      "mainEntity": {
-        "@type": "Service",
-        "name": "Espaço Vida Saudável Digital",
-        "provider": { "@type": "Person", "name": "Eduardo Sidegum", "jobTitle": "Distribuidor Independente Herbalife" },
-        "areaServed": { "@type": "Place", "name": "Novo Hamburgo, RS" }
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "O que é um Espaço Vida Saudável?",
-          "acceptedAnswer": { "@type": "Answer", "text": "É um ponto de encontro de bem-estar tocado por um Distribuidor Independente. Ali são servidas bebidas como shakes e chás, sempre preparadas conforme o rótulo do produto." }
-        },
-        {
-          "@type": "Question",
-          "name": "Preciso ir pessoalmente?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Não. Muita gente começa conversando pelo WhatsApp e só depois decide se quer conhecer o espaço pessoalmente." }
-        },
-        {
-          "@type": "Question",
-          "name": "Como faço para conhecer?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Basta chamar no WhatsApp +55 51 99966-3200. A conversa serve para tirar dúvidas e você decide o próximo passo sem pressa." }
-        }
-      ]
-    }
-  ]
+/* ══════════════════════════════════════════════════════════════
+   ECOSSISTEMA PARCEIRO — style.css
+   Eduardo Sidegum — Distribuidor Independente Herbalife
+   Tema: preto fosco -> preto piano + luz e sombra (conversão)
+   Animações nativas de CSS. Sem framework, sem fonte externa.
+   ══════════════════════════════════════════════════════════════ */
+
+:root{
+  --preto-fosco:#0a0a0a;
+  --preto-piano:#000;
+  --cartao:#141414;
+  --cartao-alto:#1a1a1a;
+  --linha:rgba(255,255,255,.08);
+  --texto:#f5f5f5;
+  --suave:#a3a3a3;
+  --verde:#2e8b57;
+  --verde-claro:#3cb371;
+  --verde-glow:rgba(60,179,113,.45);
+  --raio:18px;
+  --espaco:clamp(2.5rem,6vw,5rem);
+  --fonte:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
-</script>
-</head>
-<body>
-<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="topbar">
-  <div class="container">
-    <a class="logo" href="https://edusidegum.github.io/parceiro/">e-Sid <span>Parceiro</span></a>
-    <nav class="nav" aria-label="Navegação principal">
-      <a href="https://edusidegum.github.io/parceiro/">Início</a>
-      <a href="https://edusidegum.github.io/parceiro/evs-digital/" aria-current="page">Espaço Vida Saudável</a>
-    </nav>
-  </div>
-</header>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 
-<main id="conteudo">
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 
-  <section class="hero">
-    <img class="hero-img" src="../assets/img/imagem1.webp" alt="Ponto de encontro de bem-estar com shakes e chás" width="1200" height="630" fetchpriority="high">
-    <div class="hero-content">
-      <h1>Um ponto de encontro onde comer bem fica fácil</h1>
-      <p class="lead">Funciona como a padaria da esquina: você passa, encontra gente conhecida e sai com algo pronto na mão. A diferença é que aqui são shakes, chás e nutrientes, preparados conforme o rótulo e com a orientação de um Distribuidor Independente Herbalife.</p>
-      <div class="hero-cta">
-        <a class="btn btn-discreto" href="https://edusidegum.github.io/parceiro/cadastro/cadastro.html">Já tomei decisão</a>
-        <a class="btn btn-meio" href="#como-funciona">Conte-me mais</a>
-      </div>
-    </div>
-  </section>
+body{
+  font-family:var(--fonte);
+  color:var(--texto);
+  background:var(--preto-fosco);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
 
-  <section id="como-funciona">
-    <div class="container">
-      <h2>Como funciona na prática</h2>
-      <p class="sub">Sem mistério: um lugar fixo, uma rotina simples e alguém ali do lado pra responder o que você não sabe.</p>
-      <div class="bento">
-        <article class="box">
-          <h3>Tudo no padrão do rótulo</h3>
-          <p>Cada bebida é preparada seguindo a instrução do próprio produto. Nada de mistura inventada — igual seguir a receita do bolo em vez de chutar as medidas.</p>
-        </article>
-        <article class="box">
-          <h3>Lugar de convivência</h3>
-          <p>Pense naquela mesa de café do trabalho, onde o pessoal sempre para. Aqui é a mesma ideia, só que o assunto que rende é hábito saudável e vida mais leve.</p>
-        </article>
-        <article class="box">
-          <h3>Dúvida? Chama no WhatsApp</h3>
-          <p>Ficou na dúvida entre uma opção e outra? Manda mensagem. É mais rápido que tentar adivinhar sozinho.</p>
-        </article>
-        <article class="box">
-          <h3>Encaixa na sua agenda</h3>
-          <p>Hábito é igual academia: quanto menos passos até começar, mais fácil de manter. Aqui é uma parada só.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+/* ── Preto fosco -> preto piano (camada fixa, só opacidade) ── */
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background:var(--preto-piano);
+  opacity:0;pointer-events:none;z-index:-1;
+}
+@supports (animation-timeline: scroll()){
+  body::before{
+    animation:escurecer linear both;
+    animation-timeline:scroll(root block);
+  }
+  @keyframes escurecer{ from{opacity:0} to{opacity:1} }
+}
 
-  <section>
-    <div class="container">
-      <h2>Pra quem faz sentido</h2>
-      <p class="sub">Não é pra todo mundo, e tudo bem. Veja se você se reconhece em algum desses casos.</p>
-      <div class="bento">
-        <article class="box">
-          <h3>Quem vive correndo</h3>
-          <p>Pra trocar aquele lanche improvisado do meio da tarde por algo preparado na hora.</p>
-        </article>
-        <article class="box">
-          <h3>Quem gosta de fazer junto</h3>
-          <p>Como caminhar em dupla: fazer acompanhado costuma ser mais leve do que fazer sozinho.</p>
-        </article>
-        <article class="box">
-          <h3>Quem pensa em abrir o seu</h3>
-          <p>Se a ideia de tocar um espaço desses te atrai, existe treinamento e suporte pra começar com segurança.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+img{max-width:100%;height:auto;display:block}
+a{color:var(--verde-claro)}
 
-  <section class="video">
-    <div class="container">
-      <h2>Prefere ver do que ler?</h2>
-     <iframe width="560" height="315" src="https://www.youtube.com/embed/3NNVhnoO7m8?si=ERkb_dfyFA0u2ybA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <div class="video-slot" data-video-id="" data-titulo="Como funciona o Espaço Vida Saudável">
-        <button type="button" class="video-play" aria-label="Carregar vídeo">&#9658;</button>
-      </div>
-    </div>
-  </section>
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--verde);color:#fff;padding:.6rem 1rem;z-index:200}
+.skip-link:focus{left:0}
+.container{width:min(1120px,92%);margin-inline:auto}
 
-  <section class="cta-zone">
-    <div class="container">
-      <h2>Faz sentido pra você?</h2>
-      <a class="btn btn-final" href="https://edusidegum.github.io/parceiro/cadastro/cadastro.html">Entendi, quero fazer cadastro básico e acessar treinamentos</a>
-    </div>
-  </section>
+/* ── Topo ── */
+.topbar{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--linha)}
+.topbar .container{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.8rem}
+.logo{font-weight:800;letter-spacing:.3px;color:var(--texto);text-decoration:none;font-size:1.05rem}
+.logo span{color:var(--verde-claro)}
+.nav{display:flex;gap:1.1rem;align-items:center;flex-wrap:wrap}
+.nav a{color:var(--suave);text-decoration:none;font-size:.92rem;transition:color .2s}
+.nav a:hover,.nav a[aria-current="page"]{color:var(--texto)}
 
-  <section class="faq" aria-label="Perguntas frequentes">
-    <div class="container">
-      <h2>Perguntas rápidas</h2>
-      <details>
-        <summary>O que é exatamente um Espaço Vida Saudável?</summary>
-        <p>É um ponto de encontro de bem-estar tocado por um Distribuidor Independente. Ali são servidas bebidas como shakes e chás, sempre preparadas conforme o rótulo do produto.</p>
-      </details>
-      <details>
-        <summary>Preciso ir pessoalmente?</summary>
-        <p>Não. Muita gente começa conversando pelo WhatsApp e só depois decide se quer conhecer o espaço pessoalmente.</p>
-      </details>
-      <details>
-        <summary>Como faço para conhecer?</summary>
-        <p>Basta chamar no WhatsApp +55 51 99966-3200. A conversa serve pra tirar dúvidas, e você decide o próximo passo sem pressa.</p>
-      </details>
-    </div>
-  </section>
+/* ── Hero: luz ambiente + profundidade ── */
+.hero{
+  position:relative;display:grid;place-items:center;min-height:78vh;overflow:hidden;
+  padding:var(--espaco) 0;background:#000;
+}
+/* brilho ambiente verde, suave, atrás do conteúdo */
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    radial-gradient(60% 55% at 50% 38%, rgba(60,179,113,.16), transparent 70%),
+    linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.55));
+}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.5) saturate(1.05)}
+@supports (animation-timeline: scroll()){
+  .hero-img{
+    animation:deslizar linear both;
+    animation-timeline:scroll(root block);
+    animation-range:0 60vh;
+  }
+  @keyframes deslizar{ from{transform:translateY(0) scale(1)} to{transform:translateY(8%) scale(1.06)} }
+}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:840px}
+.hero .tag{
+  display:inline-block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--verde-claro);border:1px solid rgba(60,179,113,.35);
+  padding:.4rem .9rem;border-radius:999px;margin-bottom:1.2rem;
+  background:rgba(60,179,113,.08);
+}
+.hero h1{font-size:clamp(2rem,5.2vw,3.5rem);line-height:1.12;margin-bottom:1.1rem;text-wrap:balance;font-weight:800}
+.hero .lead{font-size:clamp(1.02rem,2vw,1.22rem);color:var(--suave);max-width:660px;margin:0 auto 1.8rem}
+.hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
-  <section class="contato">
-    <div class="container contato-grid">
-      <div class="contato-card">
-        <h3>Catálogo oficial</h3>
-        <p>É onde ficam meus contatos e a lista completa de produtos, do jeitinho que a empresa apresenta. Fica no ar enquanto meu contrato estiver ativo.</p>
-        <p><a href="https://catalogoherbalife.com.br/edusidegum" rel="noopener" target="_blank">Abrir o catálogo</a></p>
-      </div>
-      <div class="contato-card">
-        <h3>WhatsApp</h3>
-        <p>Pra tirar dúvida sobre o espaço, sobre produto ou pra saber por onde começar.</p>
-        <p><a href="https://wa.me/5551999663200?text=Quero%20saber%20mais%20sobre%20parceria" rel="noopener" target="_blank">Chamar no WhatsApp</a></p>
-      </div>
-    </div>
-  </section>
+/* ── Seções ── */
+section{padding-block:var(--espaco);position:relative}
+section h2{font-size:clamp(1.6rem,3.4vw,2.3rem);margin-bottom:.7rem;text-wrap:balance;font-weight:800}
+.sub{color:var(--suave);max-width:680px;margin-bottom:2rem}
 
-</main>
+/* ── Cartões: luz no topo + glow no hover ── */
+.bento{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.box{
+  position:relative;background:linear-gradient(180deg,var(--cartao-alto),var(--cartao));
+  border:1px solid var(--linha);border-radius:var(--raio);padding:1.7rem;
+  overflow:hidden;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+/* linha de luz no topo de cada cartão */
+.box::before{
+  content:"";position:absolute;top:0;left:10%;right:10%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(60,179,113,.6),transparent);
+  opacity:.5;transition:opacity .25s ease;
+}
+.box h3{font-size:1.08rem;margin-bottom:.5rem;font-weight:700}
+.box p{color:var(--suave);font-size:.95rem}
+.box:hover{
+  transform:translateY(-4px);
+  border-color:rgba(60,179,113,.35);
+  box-shadow:0 18px 40px -18px rgba(0,0,0,.9),0 0 0 1px rgba(60,179,113,.12),0 0 32px -6px var(--verde-glow);
+}
+.box:hover::before{opacity:1}
+@supports (animation-timeline: view()){
+  .box{
+    animation:surgir linear both;
+    animation-timeline:view();
+    animation-range:entry 10% cover 55%;
+  }
+  .box:nth-child(2){animation-range:entry 0% cover 50%}
+  .box:nth-child(3){animation-range:entry 15% cover 60%}
+  .box:nth-child(4){animation-range:entry 5% cover 55%}
+  @keyframes surgir{ from{opacity:.5;transform:translateY(28px)} to{opacity:1;transform:none} }
+}
 
-<footer>
-  <div class="container footer-line">
-    <span>Eduardo Sidegum — Distribuidor Independente Herbalife</span>
-    <a href="https://edusidegum.github.io/parceiro/politica.html">Política de Privacidade</a>
-  </div>
-  <div class="container footer-line" style="margin-top:.5rem">
-    <span>Novo Hamburgo, RS, Brasil — CEP 93320-070</span>
-    <span>WhatsApp: +55 51 99966-3200</span>
-    <a href="https://catalogoherbalife.com.br/edusidegum" rel="noopener" target="_blank">Catálogo oficial</a>
-  </div>
-  <div class="container disclaimer">
-    Distribuidor Independente Herbalife. Resultados individuais variam — cada pessoa é um caso. Garantia de 30 dias ao cliente, conforme as normas oficiais. Este site não vende online; os pedidos passam pelos canais oficiais. Produtos e informações não substituem a orientação de um profissional habilitado.
-  </div>
-  <div class="container dev">© 2026 Eduardo Sidegum. Todos os direitos reservados. Desenvolvido em 14/09/2026.</div>
-</footer>
+/* ── Botões ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.9rem 1.7rem;border-radius:14px;text-decoration:none;font-weight:700;font-size:.98rem;line-height:1.3;transition:transform .2s,box-shadow .2s,border-color .2s,background .2s;cursor:pointer;position:relative}
+.btn-discreto{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.22);color:var(--texto);backdrop-filter:blur(6px)}
+.btn-discreto:hover{border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.08)}
+.btn-meio{border:1px solid var(--verde);color:var(--verde-claro);background:transparent}
+.btn-meio:hover{background:rgba(46,139,87,.14);box-shadow:0 0 22px -4px var(--verde-glow)}
+.btn-final{
+  background:linear-gradient(135deg,var(--verde),var(--verde-claro));color:#fff;
+  box-shadow:0 10px 30px -8px var(--verde-glow),0 0 0 1px rgba(60,179,113,.3);
+  white-space:normal;text-align:center;max-width:540px;overflow:hidden;
+}
+/* sweep de luz que atravessa o botão */
+.btn-final::after{
+  content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:skewX(-20deg);transition:left .6s ease;
+}
+.btn-final:hover{transform:translateY(-3px);box-shadow:0 16px 40px -10px var(--verde-glow),0 0 0 1px rgba(60,179,113,.4)}
+.btn-final:hover::after{left:130%}
+.cta-zone{text-align:center}
+.cta-zone h2{margin-bottom:1.4rem}
 
-<a class="whats-float" href="https://wa.me/5551999663200?text=Quero%20saber%20mais%20sobre%20parceria" target="_blank" rel="noopener" aria-label="Quero saber mais sobre parceria">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.2-.3.3-.5v-.5c0-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4.1.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.4-.3z"/></svg>
-  <span class="wa-label">Quero saber mais sobre parceria</span>
-</a>
+/* ── Vídeo ── */
+.video-wrap{position:relative;border-radius:var(--raio);overflow:hidden;border:1px solid var(--linha);box-shadow:0 24px 60px -24px rgba(0,0,0,.9),0 0 0 1px rgba(60,179,113,.08)}
+.video-wrap iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
 
-<script src="../assets/js/bloco-incluir.js" defer></script>
-</body>
-</html>
+/* ── FAQ ── */
+.faq{max-width:800px;margin-inline:auto}
+.faq details{background:var(--cartao);border:1px solid var(--linha);border-radius:14px;padding:1rem 1.3rem;margin-bottom:.7rem;transition:border-color .2s}
+.faq details[open]{border-color:rgba(60,179,113,.3)}
+.faq summary{cursor:pointer;font-weight:600;list-style:none}
+.faq summary::before{content:"+ ";color:var(--verde-claro);font-weight:700}
+.faq details[open] summary::before{content:"- "}
+.faq p{margin-top:.6rem;color:var(--suave);font-size:.95rem}
+
+/* ── Contato ── */
+.contato-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem}
+.contato-card{background:linear-gradient(180deg,var(--cartao-alto),var(--cartao));border:1px solid var(--linha);border-radius:var(--raio);padding:1.5rem;transition:border-color .2s,box-shadow .2s}
+.contato-card:hover{border-color:rgba(60,179,113,.3);box-shadow:0 0 26px -8px var(--verde-glow)}
+.contato-card h3{margin-bottom:.5rem;font-weight:700}
+.contato-card p{color:var(--suave);font-size:.95rem;margin-bottom:.6rem}
+
+/* ── Rodapé ── */
+footer{border-top:1px solid var(--linha);padding-block:2.4rem;background:var(--cartao)}
+.footer-line{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;align-items:center;color:var(--suave);font-size:.88rem}
+.footer-line a{color:var(--suave);text-decoration:none}
+.footer-line a:hover{color:var(--texto)}
+.disclaimer{color:#8a8a8a;font-size:.74rem;line-height:1.6;margin-top:.7rem;max-width:900px}
+.dev{color:#6b6b6b;font-size:.72rem;margin-top:.5rem}
+
+/* ── WhatsApp flutuante ── */
+.whats-float{position:fixed;right:18px;bottom:18px;z-index:150;display:inline-flex;align-items:center;gap:.5rem;background:#25d366;color:#06281a;text-decoration:none;padding:.72rem 1.1rem;border-radius:999px;font-weight:700;font-size:.9rem;box-shadow:0 10px 28px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s}
+.whats-float:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(37,211,102,.5)}
+.whats-float svg{width:20px;height:20px;fill:#06281a}
+
+/* ── Banner LGPD ── */
+.lgpd-banner{position:fixed;bottom:0;left:0;right:0;z-index:300;background:#0d0d0d;border-top:1px solid var(--linha);padding:.9rem 1.2rem;display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;justify-content:space-between;font-size:.85rem;color:var(--suave)}
+.lgpd-banner a{color:var(--verde-claro)}
+.lgpd-banner button{border:none;border-radius:10px;padding:.55rem 1.1rem;font-weight:700;cursor:pointer;font-size:.85rem}
+.btn-aceitar{background:var(--verde);color:#fff}
+.btn-recusar{background:transparent;border:1px solid var(--linha);color:var(--suave)}
+
+/* ── Quem pediu menos movimento, recebe menos movimento ── */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .box:hover{transform:none}
+  .btn-final:hover{transform:none}
+}
+
+@media (max-width:640px){
+  .hero{min-height:64vh}
+  .whats-float .wa-label{display:none}
+  .whats-float{padding:.7rem}
+}
