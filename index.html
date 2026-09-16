@@ -163,8 +163,15 @@ section h2{font-size:clamp(1.6rem,3.6vw,2.5rem);font-weight:800;letter-spacing:-
 .carousel{position:relative;margin-top:2rem;z-index:1}
 .carousel-viewport{overflow:hidden;border-radius:var(--r);border:1px solid var(--linha);background:var(--papel)}
 .carousel-track{display:flex;transition:transform .5s var(--ease)}
-.carousel-slide{flex:0 0 100%;min-width:100%}
-.carousel-slide img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.carousel-slide{
+  flex:0 0 100%;min-width:100%;
+  display:grid;justify-items:center;
+}
+.carousel-slide img{
+  width:min(100%,400px);
+  aspect-ratio:3/4;
+  object-fit:cover;
+}
 .carousel-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1rem}
 .carousel-btn{border:1px solid var(--linha-2);background:var(--papel);color:var(--musgo);width:44px;height:44px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:grid;place-items:center;transition:translate .2s,background .2s;font-family:inherit}
 .carousel-btn:hover{translate:0 -2px;background:rgba(31,92,67,.08)}
