@@ -484,6 +484,17 @@ footer .topline{height:1px;background:linear-gradient(90deg,transparent,var(--mu
   .hero-figure:hover img{transform:none}
 }
 
+/* dropdown do menu (padrão principal) */
+.nav > a,.nav > .drop > button{color:var(--grafite);font-size:.9rem;min-height:44px;display:inline-flex;align-items:center;border-bottom:2px solid transparent;background:none;border-top:0;border-left:0;border-right:0;cursor:pointer;font-family:inherit;padding:.4rem .3rem;transition:color .2s,border-color .2s}
+.nav > a:hover,.nav > a[aria-current="page"],.nav > .drop > button:hover{color:var(--tinta);border-color:var(--musgo)}
+.drop{position:relative}
+.drop > button::after{content:" ▾";font-size:.7rem;opacity:.7}
+.drop-menu{position:absolute;top:100%;left:0;min-width:280px;max-height:70vh;overflow-y:auto;background:var(--papel);border:1px solid var(--linha-2);border-radius:14px;box-shadow:0 20px 50px -20px rgba(22,36,29,.35);padding:.4rem;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s}
+.drop.open .drop-menu,.drop:focus-within .drop-menu{opacity:1;visibility:visible;transform:none}
+.drop-menu a{display:block;padding:.55rem .8rem;border-radius:8px;color:var(--grafite);font-size:.88rem;min-height:40px;display:flex;align-items:center}
+.drop-menu a:hover{background:rgba(31,92,67,.08);color:var(--musgo)}
+@media (max-width:640px){.drop-menu{position:fixed;left:0;right:0;top:auto;bottom:0;max-height:70vh;border-radius:20px 20px 0 0;min-width:0}}
+
 /* ── 17. RESPONSIVO ────────────────────────────────────────── */
 @media (max-width:900px){
   .hero-in{grid-template-columns:1fr}
