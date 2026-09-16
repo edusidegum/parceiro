@@ -10,6 +10,12 @@
     var g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id='+GA4_ID;document.head.appendChild(g);
     window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config',GA4_ID,{anonymize_ip:true});
   }
+
+/* Dropdown do menu (padrão principal) */
+(function(){'use strict';var drop=document.querySelector('.drop');if(!drop)return;var btn=drop.querySelector('button');btn.addEventListener('click',function(e){e.stopPropagation();var open=drop.classList.toggle('open');btn.setAttribute('aria-expanded',open?'true':'false');});document.addEventListener('click',function(e){if(!drop.contains(e.target)){drop.classList.remove('open');btn.setAttribute('aria-expanded','false');}});})();
+  /* Dropdown do menu (padrão principal) */
+
+  
   var c=ler();
   if(c==='aceito'){ligar()}
   else if(c!=='recusado'){
